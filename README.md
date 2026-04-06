@@ -1,60 +1,81 @@
-<h1 align="center">Delightful Starship</h1>
+# Delightful for Starship
 
-<p align="center">
-  Rainbow powerline prompt using <a href="https://github.com/kylesnav/delightful-design-system">Delightful Design System</a> colors.
-  <br>
-  Based on the <a href="https://starship.rs/presets/gruvbox-rainbow">Gruvbox Rainbow</a> preset, re-themed with the Delightful palette.
-</p>
+Rainbow powerline prompt themed with the [Delightful](https://github.com/kylesnav/delightful-design-system) color palette. Based on the [Gruvbox Rainbow](https://starship.rs/presets/gruvbox-rainbow) preset, re-themed with Delightful's warm, neo-brutalist colors.
 
----
-
-## The Delightful Terminal Stack
-
-| Package | Role |
-|---------|------|
-| [`ghostty/`](../ghostty/) | Terminal emulator — colors, fonts, keybinds |
-| **`starship/`** (this package) | Prompt — rainbow powerline segments |
-| [`shell/`](../shell/) | Session — tmux status bar, persistence, zsh config |
-| [`iterm2/`](../iterm2/) | iTerm2 color profiles (standalone alternative) |
+<!-- TODO: Add screenshot of prompt in terminal -->
 
 ## Prerequisites
 
-**Nerd Font** — the prompt uses powerline glyphs and language icons.
-
-```sh
-brew install --cask font-jetbrains-mono-nerd-font
-```
+- [Starship](https://starship.rs) installed
+- A [Nerd Font](https://www.nerdfonts.com/) for powerline glyphs and language icons (e.g. `brew install --cask font-jetbrains-mono-nerd-font`)
 
 ## Install
 
-1. **Install Starship** — [starship.rs](https://starship.rs)
-2. **Copy config**
+1. Copy the config into place:
    ```sh
    cp starship.toml ~/.config/starship.toml
    ```
-3. **Init in your shell** — add to `~/.zshrc`:
+2. Add Starship init to your shell (e.g. `~/.zshrc`):
    ```sh
    eval "$(starship init zsh)"
    ```
 
-## What's Included
+## What's Configured
 
-The prompt displays colored powerline segments that transition left to right:
+The prompt renders colored powerline segments flowing left to right:
 
-| Segment | Color | Details |
-|---------|-------|---------|
-| OS | Blue | macOS / Linux / Windows icon |
-| Username | Blue | Always shown |
-| Directory | Yellow | Truncated to 3 levels, custom folder icons for Documents, Downloads, Music, Pictures, Developer |
-| Git branch | Green | Current branch name |
-| Git status | Green | Modified/staged/untracked indicators |
-| Language | Red | Active runtime — C, C++, Rust, Go, Node.js, PHP, Java, Kotlin, Haskell, Python |
-| Docker | Pink | Docker context when active |
-| Conda/Pixi | Pink | Environment name when active |
+| Segment | Palette Color | Details |
+|---------|---------------|---------|
+| OS icon | Pink (`color_orange`) | macOS, Linux, Windows, and distro-specific icons |
+| Username | Pink (`color_orange`) | Always shown |
+| Directory | Yellow (`color_yellow`) | Truncated to 3 levels; custom icons for Documents, Downloads, Music, Pictures, Developer |
+| Git branch | Green (`color_aqua`) | Branch name with icon |
+| Git status | Green (`color_aqua`) | Modified / staged / untracked indicators |
+| Languages | Cyan (`color_blue`) | Active runtime -- C, C++, Rust, Go, Node.js, PHP, Java, Kotlin, Haskell, Python |
+| Docker | Gray (`color_bg3`) | Docker context when active |
+| Conda / Pixi | Gray (`color_bg3`) | Environment name when active |
+| Time | Dark (`color_bg1`) | Current time (HH:MM) |
 
-## Light Mode
+A second prompt line shows a Nerd Font glyph: green on success, red on error, with vim-mode variants.
 
-A light palette variant is included as a commented block at the bottom of `starship.toml`. To use it, change `palette = 'delightful_dark'` to `palette = 'delightful_light'` and uncomment the light palette block.
+## Palette
+
+The `delightful_dark` palette maps Starship color names to Delightful hex values:
+
+| Name | Hex | Delightful Family |
+|------|-----|-------------------|
+| `color_fg0` | `#eee9e3` | Neutral (foreground) |
+| `color_bg1` | `#3c3632` | Neutral (dark surface) |
+| `color_bg3` | `#615d58` | Neutral (mid surface) |
+| `color_blue` | `#5cb8d6` | Cyan |
+| `color_aqua` | `#3aad5f` | Green |
+| `color_green` | `#3aad5f` | Green (alias) |
+| `color_orange` | `#ff4fa8` | Pink |
+| `color_purple` | `#ff4fa8` | Pink (alias) |
+| `color_red` | `#e8554c` | Red |
+| `color_yellow` | `#f5c526` | Yellow |
+
+> **Note:** The slot names come from the Gruvbox Rainbow preset and don't always match Delightful's color families. `color_blue` is actually Cyan, `color_orange`/`color_purple` both map to Pink, and `color_aqua`/`color_green` both map to Green.
+
+### Light Mode
+
+A light palette variant is included as a commented block at the bottom of `starship.toml`. To switch:
+
+1. Change `palette = 'delightful_dark'` to `palette = 'delightful_light'`
+2. Uncomment the `[palettes.delightful_light]` block at the end of the file
+
+## Part of Delightful
+
+This is one piece of the Delightful terminal stack:
+
+| Package | Role |
+|---------|------|
+| [delightful-ghostty](https://github.com/kylesnav/delightful-ghostty) | Terminal emulator -- colors, fonts, keybinds |
+| **delightful-starship** | Prompt -- rainbow powerline segments |
+| [delightful-shell](https://github.com/kylesnav/delightful-shell) | Shell session -- tmux, zsh config |
+| [delightful-iterm2](https://github.com/kylesnav/delightful-iterm2) | iTerm2 color profiles |
+
+All packages share the same [Delightful Design System](https://github.com/kylesnav/delightful-design-system) palette.
 
 ## License
 

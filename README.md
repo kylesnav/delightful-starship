@@ -2,8 +2,6 @@
 
 Rainbow powerline prompt themed with the [Delightful](https://github.com/kylesnav/delightful-design-system) color palette. Based on the [Gruvbox Rainbow](https://starship.rs/presets/gruvbox-rainbow) preset, re-themed with Delightful's warm, neo-brutalist colors.
 
-<!-- TODO: Add screenshot of prompt in terminal -->
-
 ## Prerequisites
 
 - [Starship](https://starship.rs) installed

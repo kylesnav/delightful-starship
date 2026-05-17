@@ -1,5 +1,13 @@
 # Delightful for Starship
 
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="screenshots/Starship-Dark.png" />
+    <source media="(prefers-color-scheme: light)" srcset="screenshots/Starship-Light.png" />
+    <img src="screenshots/Starship-Dark.png" width="600" alt="Delightful Starship prompt" />
+  </picture>
+</p>
+
 Rainbow powerline prompt themed with the [Delightful](https://github.com/kylesnav/delightful-design-system) color palette. Based on the [Gruvbox Rainbow](https://starship.rs/presets/gruvbox-rainbow) preset, re-themed with Delightful's warm, neo-brutalist colors.
 
 ## Prerequisites
